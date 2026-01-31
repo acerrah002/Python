@@ -1,3 +1,6 @@
+import ExampleTwo
+
+ExampleTwo.main()
 #This is a int
 x = 1
 
