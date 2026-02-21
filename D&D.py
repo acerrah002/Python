@@ -146,26 +146,37 @@ LocationTwo = "Elf City"
 #Functions in python are blocks that can be used multiple times
 #to make a function in python we start by typing "def"
 
-#Name = ShopUI
-#Parameters everything inside brackets
 
-def ShopUI():
-    #Dictionaries
-    #Dictionaries have Key value pairs
-    #HealthPotion Heals 30 health
-    ShopItems = {"ChestPlate":50,"MEDHealthPot":15,"CrossBow":75,"Dagger":200,"RandomGlowingRock":1,"Bolts10x":20}
-    #print(ShopItems.keys())
-    #print(ShopItems["ChestPlate"])
+
+UserInput = input("Would you like to buy a weapon? (y/n)")
+if UserInput == "y":
     
-    #first we printed the locatioing of the list then the key of the dictionary which gives us the value of the item
-    
-    #Choose to return a value
+    WeaponShopPrices = {"Sharp Katana":100,"Durable Bow":75,"Arrow x30":60, "The Sky Splitter":10000}
+    #We want to keep the multiple values with the same keys
+    WeaponShopItems = ["Sharp Katana","Durable Bow","Arrow x30","Arrow x30","The Sky Splitter"]
 
-    #return ShopItems[3]["Dagger"]
-#To activate our function and use it's we need to call it
-#To call a function we do the function name and it's backets but make sure you have the function defined before it
+    PlayerWeapons = []
 
-ShopUI()
+    print(WeaponShopItems)
+    print(WeaponShopPrices)
+    print("You have $",UserMoney," in weapons.")
+
+    def BuyWeapon(x):
+        BuyUser = input("What would you like to buy?")
+        if WeaponShopItems:
+            x = x - WeaponShopPrices[BuyUser]
+            PlayerWeapons.append(BuyUser)
+            WeaponShopItems.remove(BuyUser)
+            print(WeaponShopItems)
+        else:
+            print("You have no more weapons to buy.")
+        return x
+
+    while UserInput != "y":
+        UserMoney = BuyWeapon(UserMoney)
+        print ("You have $",UserMoney," in weapons.")
+        UserInput = input("Would you like to quit the shop? (y/n)")
+
 #print(ShopUI())
 
 #print(UserMoney)
