@@ -151,13 +151,12 @@ LocationTwo = "Elf City"
 UserInput = "Nothing"
 
 def Shop1(UserInput):
+    WeaponShopPrices = {"Sharp_Katana":100,"Durable_Bow":75,"Arrow_X30":60, "The_Sky_Splitter":10000}
+    #We want to keep the multiple values with the same keys
+    WeaponShopItems = ["Sharp_Katana","Durable_Bow","Arrow_X30","Arrow_X30","The_Sky_Splitter"]
+    PlayerWeapons = []
     while UserInput != "n":
         UserInput = input("Would you like to buy a weapon? (y/n)")
-        WeaponShopPrices = {"Sharp_Katana":100,"Durable_Bow":75,"Arrow_X30":60, "The_Sky_Splitter":10000}
-        #We want to keep the multiple values with the same keys
-        WeaponShopItems = ["Sharp_Katana","Durable_Bow","Arrow_X30","Arrow_X30","The_Sky_Splitter"]
-
-        PlayerWeapons = []
         print ("You have $",UserMoney," in weapons.")
         print(WeaponShopItems)
         print(WeaponShopPrices)
@@ -172,6 +171,7 @@ def Shop1(UserInput):
             print("You have no more weapons to buy.")
         
 Shop1(UserInput)
+print("Shop exitted")
 
 #print(ShopUI())
 
