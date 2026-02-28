@@ -148,20 +148,20 @@ LocationTwo = "Elf City"
 
 
 
-UserInput = input("Would you like to buy a weapon? (y/n)")
-if UserInput == "y":
-    
-    WeaponShopPrices = {"Sharp Katana":100,"Durable Bow":75,"Arrow x30":60, "The Sky Splitter":10000}
-    #We want to keep the multiple values with the same keys
-    WeaponShopItems = ["Sharp Katana","Durable Bow","Arrow x30","Arrow x30","The Sky Splitter"]
+UserInput = "Nothing"
 
-    PlayerWeapons = []
+def Shop1(UserInput):
+    while UserInput != "y":
+        UserInput = input("Would you like to buy a weapon? (y/n)")
+        WeaponShopPrices = {"Sharp_Katana":100,"Durable_Bow":75,"Arrow_X30":60, "The_Sky_Splitter":10000}
+        #We want to keep the multiple values with the same keys
+        WeaponShopItems = ["Sharp_Katana","Durable_Bow","Arrow_X30","Arrow_X30","The_Sky_Splitter"]
 
-    print(WeaponShopItems)
-    print(WeaponShopPrices)
-    print("You have $",UserMoney," in weapons.")
-
-    def BuyWeapon(x):
+        PlayerWeapons = []
+        print ("You have $",UserMoney," in weapons.")
+        print(WeaponShopItems)
+        print(WeaponShopPrices)
+        print("You have $",UserMoney," in weapons.")
         BuyUser = input("What would you like to buy?")
         if WeaponShopItems:
             x = x - WeaponShopPrices[BuyUser]
@@ -171,11 +171,8 @@ if UserInput == "y":
         else:
             print("You have no more weapons to buy.")
         return x
-
-    while UserInput != "y":
-        UserMoney = BuyWeapon(UserMoney)
-        print ("You have $",UserMoney," in weapons.")
-        UserInput = input("Would you like to quit the shop? (y/n)")
+        
+Shop1(UserInput)
 
 #print(ShopUI())
 
