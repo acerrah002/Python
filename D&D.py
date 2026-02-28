@@ -165,9 +165,12 @@ def Shop1(UserInput):
         BuyUser = input("What would you like to buy?")
         if WeaponShopItems:
             #WeaponShopPrices[BuyUser]
-            PlayerWeapons.append(BuyUser)
-            WeaponShopItems.remove(BuyUser)
-            print(WeaponShopItems)
+            try:
+                PlayerWeapons.append(BuyUser)
+                WeaponShopItems.remove(BuyUser)
+                print(WeaponShopItems)
+            except:
+                print("That's not a item")
         elif UserInput != "n":
             print("You exited the shop")
             break
