@@ -5,6 +5,7 @@
 import random
 user = input("Type what you'll do: (Rock,Paper,Scissor) ")
 user = user.lower()
+
 print(user)
 choices = ["rock","paper","scissors"]
 AI=random.choice(choices)
