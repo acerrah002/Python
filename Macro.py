@@ -10,5 +10,7 @@ while True:
         while True: 
             pyautogui.moveTo(userx, usery)
             pyautogui.click()
+            if keyboard.read_key()=="up":
+                break
     elif keyboard.read_key()=="up":
         break
