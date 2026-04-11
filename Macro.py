@@ -7,5 +7,8 @@ while True:
         pyautogui.write("Hello world!")
         userx , usery = pyautogui.position()
         print(userx, usery)
+        while True: 
+            pyautogui.moveTo(userx, usery)
+            pyautogui.click()
     elif keyboard.read_key()=="up":
         break
