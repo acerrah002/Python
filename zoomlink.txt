@@ -1,1 +1,23 @@
 https://us02web.zoom.us/j/85047272518?pwd=2gKyK2Klka9a9NLhxuW3qwChMoUYQX.1
+
+import keyboard
+import pyautogui
+
+pyautogui.PAUSE
+print("code started")
+user = input("what would you like to do?(1,2)")
+
+if user == "1":
+    if keyboard.read_key()=="space":
+        while not (keyboard.is_pressed('right')):
+            for i in range(10):
+                pyautogui.click()
+            pyautogui.moveTo(1746,421)
+            pyautogui.click()
+            pyautogui.moveTo(1102,497) 
+elif user == "2":
+    if keyboard.read_key()=="space":
+        print(pyautogui.position())
+print("ended code")
+#Point(x=1102, y=497) cookie
+#Point(x=1746, y=421) grandma
