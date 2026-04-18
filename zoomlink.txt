@@ -21,3 +21,67 @@ elif user == "2":
 print("ended code")
 #Point(x=1102, y=497) cookie
 #Point(x=1746, y=421) grandma
+
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="./offline/pyscript/core.css" />
+<script type="module" src="./offline/pyscript/core.js"></script>
+</head>
+
+<body>
+<button><a href="register.html">Link to register</a></button>
+<div id="container">
+<p id="demo"><b>Hello world!</b></p>
+<form>
+    <br>
+    <input type=""text id="fUsername" name="fUsername" value="Username/Email/Phone">
+    <br>
+    <input type=""text id="fpassword" name="fpassword" value="Password">
+    <br>
+    <button>Log In</button>
+    <br>
+    <a href="register.html" style="color: white;">Forgot Password</a>
+</form>
+</div>
+
+<style>
+    input{
+        margin-bottom: 10px;
+    }
+
+    p{
+        color:white;
+        font-size: 30px;
+
+    }
+    #container{
+        background-color: grey;
+        width: 300px;
+        height: 500px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    body{
+        background-image: url("download.jpg");
+        background-repeat: no-repeat;
+        background-size:cover;
+    }
+</style>
+
+<script type="py">
+ from pyscript import web
+ print("Hello from login!")
+ element = web.page["#demo"]
+ element.innerHTML = "ADD ACCOUNT"
+ #element.style["background-color"]= "red"
+ #element.style["font-size"]="30px"
+ print("hello world!")
+</script>
+</body>
+
+</html>
