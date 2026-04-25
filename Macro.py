@@ -12,10 +12,11 @@ def moveandclickfunc(x,y):
 
 if user == "1":
     #this add to the list
-    if keyboard.read_key()=="+":
+    if keyboard.read_key()=="right":
+                print("keyboard recognized")
                 cooldown = False
                 while not (keyboard.is_pressed('space')):
-                    if keyboard.is_pressed('+'):
+                    if keyboard.is_pressed('right'):
                         if not cooldown:
                             print(pyautogui.position())
                             cooldown = True
