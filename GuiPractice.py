@@ -13,10 +13,17 @@ def createclickposition():
     print("code started")
     if keyboard.read_key()=="right":
                 print("keyboard recognized")
-                #while not (keyboard.is_pressed('space')):
-                    #if keyboard.on_release('+'):
+                #click on the screen repeatedly
+                while not (keyboard.is_pressed('space')):
+                    #we want to check if the user pressed the button
+                    #and only once will the position be shown
+                    cooldown = True
+                    if keyboard.on_release('+') and cooldown:
+                        cooldown = False
                         #listofmousepositon.append(pyautogui.position())
-                        #print(pyautogui.position())
+                        print(pyautogui.position())
+                        
+                        cooldown = True
 
 root = Tk()
 frm = ttk.Frame(root,padding=10)
