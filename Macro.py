@@ -1,15 +1,19 @@
 import keyboard
 import pyautogui
 import time
+#Defined a list
 listofmousepositon=[]
+#We fixed a pyautogui setting so we can click faster
 pyautogui.PAUSE
+#Debug print
 print("code started")
+#Input to choose what to do
 user = input("what would you like to do?(1,2)")
-
+#Function to move and click at a position
 def moveandclickfunc(x,y):
     pyautogui.moveTo(x,y)
     pyautogui.click()
-
+#This is section to add to a list or click them
 if user == "1":
     #this add to the list
     if keyboard.read_key()=="right":
@@ -26,7 +30,7 @@ if user == "1":
                     
                         
     #this removes the last position
-    if keyboard.read_key()=="-" and len(listofmousepositon)>0:
+    if keyboard.read_key()=="left" and len(listofmousepositon)>0:
                 listofmousepositon.pop()
 
     if keyboard.read_key()=="space":
