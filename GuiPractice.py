@@ -23,7 +23,7 @@ ttk.Label(frm,text="Hello World!").grid(column=0,row=0)
 ttk.Button(frm, text="Quit", command=root.destroy).grid(column=1,row=0)
 
 ttk.Label(frm,text="Add Position").grid(column=0,row=1)
-ttk.Button(frm, text="Print",command=printhello).grid(column=1,row=1)
+ttk.Button(frm, text="Print",command=createclickposition).grid(column=1,row=1)
 
 ttk.Label(frm,text="End Code").grid(column=0,row=1)
 ttk.Button(frm, text="Print",command=printhello).grid(column=1,row=1)
