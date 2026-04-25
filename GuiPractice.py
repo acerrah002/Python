@@ -13,8 +13,8 @@ def createclickposition():
     if keyboard.read_key()=="+":
                 while not (keyboard.is_pressed('space')):
                     if keyboard.on_release('+'):
-                        listofmousepositon.append(pyautogui.position())
-                        print("added position")
+                        #listofmousepositon.append(pyautogui.position())
+                        print(pyautogui.position())
 
 root = Tk()
 frm = ttk.Frame(root,padding=10)
