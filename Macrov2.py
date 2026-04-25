@@ -69,7 +69,7 @@ class AutoClickerGUI:
                 if not self.is_running: 
                     break
                 pyautogui.click(pos.x, pos.y)
-                time.sleep(0.5) 
+                time.sleep(0.01) 
 
     def stop_clicking(self):
         if self.is_running:
