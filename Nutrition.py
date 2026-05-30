@@ -1,26 +1,39 @@
 import json
 
 def writetoprofile():
+    userDate = input("Enter the date (YYYY-MM-DD): ")
+    userBreakfastCalories = int(input("Enter calories for breakfast: "))
+    userBreakfastProtein = int(input("Enter protein for breakfast: "))
+
+    userLunchCalories = int(input("Enter calories for Lunch: "))
+    userLunchProtein = int(input("Enter protein for Lunch: "))
+
+    userDinnerCalories = int(input("Enter calories for Dinner: "))
+    userDinnerProtein = int(input("Enter protein for Dinner: "))
+
+    TotalCalories = userBreakfastCalories + userLunchCalories + userDinnerCalories
+    TotalProtein = userBreakfastProtein + userLunchProtein + userDinnerProtein
+
     user_profile = {
         #This is in YYYY-MM-DD format
-        "Date" : "2026-05-30",
-        "Calories" : 2000,
+        "Date" : userDate,
+        "Calories" : TotalCalories,
         #103, 70, 80
-        "Protein" : 70,
+        "Protein" : TotalProtein,
         "Meals":{
                 "Breakfast" : {
-                "Calories" : 500,
-                "Protein" : 20
+                "Calories" : userBreakfastCalories,
+                "Protein" : userBreakfastProtein
             },
 
             "Lunch" : {
-                "Calories" : 700,
-                "Protein" : 30
+                "Calories" : userLunchCalories,
+                "Protein" : userLunchProtein
             },
 
             "Dinner" : {
-                "Calories" : 800,
-                "Protein" : 20}
+                "Calories" : userDinnerCalories,
+                "Protein" : userDinnerProtein}
           }
         }
 
