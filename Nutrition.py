@@ -1,40 +1,22 @@
 import json
 
+def askuserinput(meal):
+    inputCalories = int(input(f"Enter calories for {meal}: "))
+    inputProtein  = int(input(f"Enter protein for {meal}: "))
+    return {"Calories" : inputCalories, "Protein" : inputProtein}
+
 def writetoprofile():
     userDate = input("Enter the date (YYYY-MM-DD): ")
-    userBreakfastCalories = int(input("Enter calories for breakfast: "))
-    userBreakfastProtein = int(input("Enter protein for breakfast: "))
-
-    userLunchCalories = int(input("Enter calories for Lunch: "))
-    userLunchProtein = int(input("Enter protein for Lunch: "))
-
-    userDinnerCalories = int(input("Enter calories for Dinner: "))
-    userDinnerProtein = int(input("Enter protein for Dinner: "))
-
-    TotalCalories = userBreakfastCalories + userLunchCalories + userDinnerCalories
-    TotalProtein = userBreakfastProtein + userLunchProtein + userDinnerProtein
+    mealNames = ["Breakfast", "Lunch", "Dinner"]
+    meals = {meal: askuserinput(meal) for meal in mealNames}
+    totalCalories = sum(info["Calories"] for info in meals.values())
+    totalProtein = sum(info["Protein"] for info in meals.values())
 
     user_profile = {
-        #This is in YYYY-MM-DD format
-        "Date" : userDate,
-        "Calories" : TotalCalories,
-        #103, 70, 80
-        "Protein" : TotalProtein,
-        "Meals":{
-                "Breakfast" : {
-                "Calories" : userBreakfastCalories,
-                "Protein" : userBreakfastProtein
-            },
-
-            "Lunch" : {
-                "Calories" : userLunchCalories,
-                "Protein" : userLunchProtein
-            },
-
-            "Dinner" : {
-                "Calories" : userDinnerCalories,
-                "Protein" : userDinnerProtein}
-          }
+        "Date": userDate,
+        "Calories": totalCalories,
+        "Protein": totalProtein,
+        "Meals": meals
         }
 
     with open("user_profile.json", "w") as file:
