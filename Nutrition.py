@@ -21,7 +21,7 @@ def writetoprofile():
     else:
         user_profile = {}
     #updates the target data    
-    user_profile = {
+    user_profile[userDate] = {
         userDate :{
         "TotalCalories": totalCalories,
         "TotalProtein": totalProtein,
@@ -40,4 +40,8 @@ def readfromprofile():
     #print(f"Date: {user_profile['Date']}")
     #print(f"Calories: {user_profile['Calories']}")
 
-readfromprofile()
+user = input("Do you want to write to the profile or read from it? (write/read)(1/2): ")
+if user == 1:
+    writetoprofile()
+elif user == 2:
+    readfromprofile()
