@@ -41,7 +41,7 @@ def readfromprofile():
     #print(f"Calories: {user_profile['Calories']}")
 
 user = input("Do you want to write to the profile or read from it? (write/read)(1/2): ")
-if user == 1:
+if user == "1":
     writetoprofile()
-elif user == 2:
+elif user == "2":
     readfromprofile()
