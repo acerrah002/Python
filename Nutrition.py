@@ -1,4 +1,5 @@
 import json
+import os
 
 def askuserinput(meal):
     inputCalories = int(input(f"Enter calories for {meal}: "))
@@ -12,12 +13,21 @@ def writetoprofile():
     totalCalories = sum(info["Calories"] for info in meals.values())
     totalProtein = sum(info["Protein"] for info in meals.values())
 
+    #Load existing profile if it exists, otherwise create a new one
+    filename = "user_profile.json"
+    if os.path.exists(filename) and os.path.getsize(filename) > 0:
+        with open(filename, "r") as file:
+            user_profile = json.load(file)
+    else:
+        user_profile = {}
+    #updates the target data    
     user_profile = {
-        "Date": userDate,
+        userDate :{
         "TotalCalories": totalCalories,
         "TotalProtein": totalProtein,
         "Meals": meals
         }
+    }
 
     with open("user_profile.json", "w") as file:
         json.dump(user_profile, file)
