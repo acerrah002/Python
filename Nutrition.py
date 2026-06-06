@@ -14,8 +14,8 @@ def writetoprofile():
 
     user_profile = {
         "Date": userDate,
-        "Calories": totalCalories,
-        "Protein": totalProtein,
+        "TotalCalories": totalCalories,
+        "TotalProtein": totalProtein,
         "Meals": meals
         }
 
@@ -26,7 +26,8 @@ def readfromprofile():
     #make it to only see the date and calories
     with open("user_profile.json", "r") as file:
         user_profile = json.load(file)
-    print(f"Date: {user_profile['Date']}")
-    print(f"Calories: {user_profile['Calories']}")
+    print(json.dumps(user_profile, indent=3))
+    #print(f"Date: {user_profile['Date']}")
+    #print(f"Calories: {user_profile['Calories']}")
 
-writetoprofile()
+readfromprofile()
