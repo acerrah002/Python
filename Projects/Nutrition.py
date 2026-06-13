@@ -39,6 +39,11 @@ def readfromprofile():
     print(json.dumps(user_profile, indent=3))
     #print(f"Date: {user_profile['Date']}")
     #print(f"Calories: {user_profile['Calories']}")
+    
+#we want to organize the dates in a weekly order
+#make a simple UI using Tkinker to select the days as one of the number in the weeks
+#then wehn you click it shows the total protein, total calories, and the meals for that day
+#also shows the 3 meals and how much calories and protein for each meal
 
 user = input("Do you want to write to the profile or read from it? (write/read)(1/2): ")
 if user == "1":
