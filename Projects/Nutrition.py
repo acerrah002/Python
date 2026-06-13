@@ -5,12 +5,11 @@ import customtkinter as ctk
 root = ctk.CTk()
 root.geometry("400x200")
 root.title("Nutrition Tracker")
-root.grid_rowconfigure((0,1),weight=1)
 root.grid_columnconfigure(0,weight=1)
 button1 = ctk.CTkButton(root, text="Calender")
 button2 = ctk.CTkButton(root, text="Track Nutrition")
-button1.grid(row=0, column=0,rowspan=2,sticky="nsew", padx=20, pady=10)
-button2.grid(row=2, column=0,rowspan=2,sticky="nsew", padx=20, pady=10)
+button1.grid(row=0, column=0,sticky="nsew", padx=20, pady=10)
+button2.grid(row=2, column=0,sticky="nsew", padx=20, pady=10)
 
 root.mainloop()
 
