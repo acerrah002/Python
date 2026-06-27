@@ -24,8 +24,6 @@ class NutritionApp(ctk.CTk):
         self.current_frame.grid(row=0, column=0, sticky="nsew", padx=20, pady=20)
 
 
-
-
 #Main screen
 class MainMenu(ctk.CTkFrame):
     def __init__(self, master):
@@ -42,7 +40,7 @@ class MainMenu(ctk.CTkFrame):
         button1.grid(row=0, column=0, sticky="nsew", padx=20, pady=10)
         button2.grid(row=2, column=0, sticky="nsew", padx=20, pady=10)
 
-#Second screen
+#Tracker Page
 class TrackNutrition(ctk.CTkFrame):
     def __init__(self, master):
         super().__init__(master)
@@ -63,6 +61,7 @@ class TrackNutrition(ctk.CTkFrame):
         BreakfastCaloriesLabel = ctk.CTkLabel(self, text="Calories")
         BreakfastCaloriesLabel.grid(row=3, column=0, sticky="w", padx=20, pady=10)
 
+#Calender Page
 class Calender(ctk.CTkFrame):
     def __init__(self, master):
         super().__init__(master)
