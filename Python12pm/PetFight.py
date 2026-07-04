@@ -90,11 +90,13 @@ def Addition(x,y):
 #hello(Addition(3,4))
 
 import random
+import customthinter
+
 def damage(health,damagemaximum,whichpet):
     #DR stand for damageRandom
     dr = random.randint(0,damagemaximum)
     health = health - dr
-    print(whichpet," attacks pet two Health:", health, "Damage:", dr)
+    print(whichpet," attacks pet", whichpet ,"Health:", health, "Damage:", dr)
     return health
 
 #create the defense function
