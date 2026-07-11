@@ -14,7 +14,7 @@ pet = """
    _||_   _||_
  """
 
-Sadpet = """
+Sadpet1 = """
     __________
     |        |
     |        |  
@@ -90,13 +90,27 @@ def Addition(x,y):
 #hello(Addition(3,4))
 
 import random
-import customthinter
+import customtkinter
+
+app = customtkinter.CTk()
+app.geometry("800x800")
+label = customtkinter.CTkLabel(app, text=pet)
+label = customtkinter.CTkLabel(app, text="HP:")
+
+button = customtkinter.CTkButton(app, text="Attack")
+button2 = customtkinter.CTkButton(app, text="Defend")
+
+button.pack(padx=20, pady=20)
+label.pack(padx=20, pady=20)
+
 
 def damage(health,damagemaximum,whichpet):
     #DR stand for damageRandom
     dr = random.randint(0,damagemaximum)
     health = health - dr
     print(whichpet," attacks pet", whichpet ,"Health:", health, "Damage:", dr)
+    #if whichpet == "1":
+        #button.configure(text="HP: " + str(health))
     return health
 
 #create the defense function
@@ -122,7 +136,8 @@ def fighting(pet1, playerhealth, pet2, enemyhealth):
             playerhealth = defense(playerhealth,20,"1")
         playerhealth = damage(playerhealth,10,"2")
     if playerhealth <= 0:
-        print("Your pet lost", Sadpet)
+        print("Your pet lost", pet)
     else:
         print("Your pet won", pet)
 fighting(pet,50,pet,50)
+app.mainloop()
