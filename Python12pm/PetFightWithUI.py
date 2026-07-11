@@ -28,8 +28,7 @@ def Attack(HP, label ,MaxDamage, WhichPet):
     print(WhichPet, " was Attcked")
     global Health
     Health = HP
-    button.pack_forget()
-
+    
 def Defend(HP, label, MaxDefense, WhichPet):
     print("Defend")
     global Health
@@ -45,8 +44,18 @@ def ShowAttackScreen():
     button.pack(padx=30, pady=20)
     button2.pack(padx=30, pady=40)
 
+def HideMainScreen():
+    print("Main Screen Hiden")
+    #Exmaple
+    PetText.pack_forget()
+    EnemyText.pack_forget()
+    SubmitPets.pack_forget()
+    ShowAttackScreen()
+    pass
+
 def ShowMainScreen():
     pass
+
 
 app = customtkinter.CTk()
 app.geometry("800x800")
@@ -60,9 +69,10 @@ button2 = customtkinter.CTkButton(app, text="Defend", command=lambda: Defend(Hea
 #TextBox
 PetText = customtkinter.CTkTextbox(app)
 EnemyText = customtkinter.CTkTextbox(app)
-SubmitPets = customtkinter.CTkButton(app, text="Submit Pets", command=lambda: ShowAttackScreen())
+SubmitPets = customtkinter.CTkButton(app, text="Submit Pets", command=lambda: HideMainScreen)
 #Pack TextBox
 PetText.pack(padx=20, pady=20)
 EnemyText.pack(padx=20, pady=40)
+SubmitPets.pack(padx=20, pady=60)
 #Runs Application
 app.mainloop()
