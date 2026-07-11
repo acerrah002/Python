@@ -1,4 +1,5 @@
 import customtkinter
+import random
 pet = """
     __________
     |        |
@@ -20,20 +21,20 @@ def printsHello():
     print("Hello World")
     label.configure(text="new text")
 
-def Attack(HP, label):
+def Attack(HP, label ,MaxDamage, WhichPet):
     print("Attack")
-    HP = HP - 10
+    HP = HP - random.randint(0,MaxDamage)
     label.configure(text="Health: " + str(HP))
-    print("Pet was Attcked")
+    print(WhichPet, " was Attcked")
     global Health
     Health = HP
 
-def Defend(HP, label):
+def Defend(HP, label, MaxDefense, WhichPet):
     print("Defend")
     global Health
-    Health = Health + 10
+    Health = Health + random.randint(0,MaxDefense)
     HealthLabel.configure(text="Health: " + str(Health))
-    print("Pet was Defended")
+    print(WhichPet, " was Defended")
 
 app = customtkinter.CTk()
 app.geometry("800x800")
